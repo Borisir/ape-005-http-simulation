@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulación de Peticiones HTTP</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Prueba de Peticiones HTTP</h1>
+            <p class="subtitle">Simulación de métodos REST con JSONPlaceholder</p>
+        </header>
+
+        <main>
+            <!-- Sección de botones -->
+            <section class="controls">
+                <h2>Realizar Peticiones</h2>
+                <div class="button-group">
+                    <button id="btnGet" class="btn btn-get">GET - Obtener</button>
+                    <button id="btnPost" class="btn btn-post">POST - Crear</button>
+                    <button id="btnPut" class="btn btn-put">PUT - Actualizar</button>
+                    <button id="btnDelete" class="btn btn-delete">DELETE - Eliminar</button>
+                </div>
+            </section>
+
+            <!-- Sección de resultados -->
+            <section class="results">
+                <h2>Resultados</h2>
+                <div id="loading" class="loading hidden">
+                    <div class="spinner"></div>
+                    <p>Cargando...</p>
+                </div>
+                <div id="resultado" class="resultado-container"></div>
+            </section>
+
+            <!-- Sección de información de la petición -->
+            <section class="request-info">
+                <h2>Información de la Petición</h2>
+                <div id="requestInfo" class="info-container">
+                    <p class="placeholder">Realiza una petición para ver los detalles</p>
+                </div>
+            </section>
+
+            <!-- Tabla de documentación -->
+            <section class="documentation">
+                <h2>Registro de Peticiones</h2>
+                <div class="table-container">
+                    <table id="requestTable">
+                        <thead>
+                            <tr>
+                                <th>Método</th>
+                                <th>URL</th>
+                                <th>Código</th>
+                                <th>Tiempo (ms)</th>
+                                <th>CORS</th>
+                                <th>Observaciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                            <tr>
+                                <td colspan="6" class="empty-state">No hay peticiones registradas</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button id="btnExport" class="btn btn-secondary">Exportar a Markdown</button>
+            </section>
+        </main>
+
+        <footer>
+            <p>Práctica APE 005 - Simulación de Peticiones HTTP</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
