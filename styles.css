@@ -1,0 +1,267 @@
+/* Reset y variables */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #2563eb;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --danger-color: #ef4444;
+    --info-color: #06b6d4;
+    --bg-color: #f8fafc;
+    --text-color: #1e293b;
+    --border-color: #e2e8f0;
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 30px 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin-bottom: 30px;
+}
+
+header h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #64748b;
+    font-size: 1.1rem;
+}
+
+/* Secciones */
+section {
+    background: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+section h2 {
+    color: var(--text-color);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* Botones */
+.button-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-get {
+    background-color: var(--success-color);
+}
+
+.btn-post {
+    background-color: var(--primary-color);
+}
+
+.btn-put {
+    background-color: var(--warning-color);
+}
+
+.btn-delete {
+    background-color: var(--danger-color);
+}
+
+.btn-secondary {
+    background-color: #64748b;
+    margin-top: 15px;
+}
+
+/* Loading spinner */
+.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+}
+
+.loading.hidden {
+    display: none;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Resultados */
+.resultado-container {
+    background-color: #f1f5f9;
+    padding: 20px;
+    border-radius: 6px;
+    border-left: 4px solid var(--primary-color);
+    min-height: 100px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.resultado-container pre {
+    background-color: #1e293b;
+    color: #e2e8f0;
+    padding: 15px;
+    border-radius: 4px;
+    overflow-x: auto;
+    font-size: 0.9rem;
+}
+
+/* Información de petición */
+.info-container {
+    display: grid;
+    gap: 12px;
+}
+
+.info-item {
+    display: flex;
+    padding: 12px;
+    background-color: #f8fafc;
+    border-radius: 4px;
+    border-left: 3px solid var(--primary-color);
+}
+
+.info-label {
+    font-weight: 600;
+    min-width: 150px;
+    color: var(--text-color);
+}
+
+.info-value {
+    color: #64748b;
+    word-break: break-all;
+}
+
+.placeholder {
+    text-align: center;
+    color: #94a3b8;
+    padding: 20px;
+}
+
+/* Tabla */
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+thead {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+.empty-state {
+    text-align: center;
+    color: #94a3b8;
+    font-style: italic;
+}
+
+.status-200, .status-201 {
+    color: var(--success-color);
+    font-weight: 600;
+}
+
+.status-400, .status-404 {
+    color: var(--warning-color);
+    font-weight: 600;
+}
+
+.status-500 {
+    color: var(--danger-color);
+    font-weight: 600;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #64748b;
+    margin-top: 30px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .button-group {
+        grid-template-columns: 1fr;
+    }
+
+    table {
+        font-size: 0.85rem;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+}
